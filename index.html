@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pouya Khalili</title>
+    <!-- FontAwesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Animate.css for additional animations -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- AOS library for scroll animations -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#home">Pouya Khalili</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMenu"
+          aria-controls="navMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About Me</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#experience">Experience</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#learning">Learning</a>
+            </li>
+          </ul>
+          <button id="darkModeToggle" class="btn btn-outline-light ms-3">
+            <i id="darkModeIcon" class="fas fa-moon"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section d-flex align-items-center">
+      <div class="hero-background"></div>
+      <div class="overlay"></div>
+      <div class="container text-center" data-aos="fade-up">
+        <h1 class="display-4">Hi, I'm Pouya.</h1>
+        <p class="lead">
+          Discover my background, experiences, projects, and what I'm learning
+          next.
+        </p>
+        <a href="#about" class="btn btn-outline-light btn-lg hover-animate"
+          >Learn More</a
+        >
+      </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about">
+      <div class="container" data-aos="fade-right">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <h2>About Me</h2>
+            <p>
+              Hello, my name is Pouya Khalili. I am a 20-year-old software
+              developer based in Tehran, Iran. I am currently pursuing a degree
+              in Computer Science at Azad Islamic University. My programming
+              journey began at the age of 16, and since then, I have worked on
+              various projects involving web development, API integrations, and
+              server-side applications.
+            </p>
+            <p>
+              I specialize in designing and developing modern websites and
+              applications, with experience in both front-end and back-end
+              technologies. My projects are publicly accessible on GitHub, and I
+              am always open to collaboration. Feel free to reach out to me via
+              social media if you're interested in working together.
+            </p>
+          </div>
+          <div class="col-md-6 text-center">
+            <img
+              src="./images/profile.jpg"
+              alt="Profile Image"
+              class="img-fluid rounded hover-animate"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="bg-light">
+      <div class="container" data-aos="fade-left">
+        <h2 class="text-center mb-5">Experience</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item hover-animate">
+                Proficient in front-end development (HTML, CSS, JavaScript)
+              </li>
+              <li class="list-group-item hover-animate">
+                Experienced in building Node.js applications
+              </li>
+              <li class="list-group-item hover-animate">
+                Skilled in working with MongoDB databases
+              </li>
+              <li class="list-group-item hover-animate">
+                API development and integration using Express.js
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item hover-animate">
+                Familiar with Nginx server configuration and management
+              </li>
+              <li class="list-group-item hover-animate">
+                WebSocket implementation for real-time communication
+              </li>
+              <li class="list-group-item hover-animate">
+                Version control and collaboration using Git
+              </li>
+              <li class="list-group-item hover-animate">
+                Basic knowledge of C and C++ programming
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <div class="container" data-aos="fade-up">
+        <h2 class="text-center mb-5">My Projects</h2>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="card hover-animate">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <a href="http://www.vidaw.info" target="_blank"
+                    >Vidaw Website</a
+                  >
+                </h5>
+                <p class="card-text">
+                  Designer and developer of a biography website with a Twitch
+                  embed included.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card hover-animate">
+              <div class="card-body">
+                <h5 class="card-title">SayehBot</h5>
+                <p class="card-text">
+                  A Node.js-based Discord bot designed for listening to music,
+                  sending notifications and more.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card hover-animate">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <a href="http://www.sayehgame.com" target="_blank"
+                    >Sayehgame Website</a
+                  >
+                </h5>
+                <p class="card-text">
+                  Co-developer of a biography website with a Twitch embed and
+                  recent YouTube videos included.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card hover-animate">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <a href="http://api.sayehgame.com" target="_blank"
+                    >Sayeh API</a
+                  >
+                </h5>
+                <p class="card-text">
+                  Developer of a simple API to gather Twitch and YouTube data
+                  and connect via WebSocket.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card hover-animate">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <a href="http://chat.sayehgame.com" target="_blank"
+                    >Sayeh AI</a
+                  >
+                </h5>
+                <p class="card-text">
+                  Designer and developer of Sayeh AI, a Large Language Model
+                  powered by Cloudflare workers API.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card hover-animate">
+              <div class="card-body">
+                <h5 class="card-title">Streamelement Widgets</h5>
+                <p class="card-text">
+                  Designer and developer of serveral streamelement widgets for
+                  better Twitch live streaming experience.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="text-center mt-4">
+          All of the projects mentioned above are available publicly on my
+          <a href="https://github.com/bllackbull" target="_blank">GitHub</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Learning Section -->
+    <section id="learning" class="bg-light">
+      <div class="container" data-aos="fade-right">
+        <h2 class="text-center mb-5">Learning</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item hover-animate">
+                Studying Computer Science at Azad Islamic University
+              </li>
+              <li class="list-group-item hover-animate">
+                Exploring Cloudflare Workers and AI interactions
+              </li>
+              <li class="list-group-item hover-animate">
+                Working on Twitch API and Twitch's EventSub API integrations
+              </li>
+              <li class="list-group-item hover-animate">
+                Currently learning React.js for modern front-end development
+              </li>
+              <li class="list-group-item hover-animate">
+                Exploring C# for software development and application
+                programming
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+      <div class="container">
+        <!-- Social Media Icons -->
+        <div class="social-icons mb-3">
+          <a
+            href="mailto:pouyakhaili83@gmail.com"
+            target="_blank"
+            class="text-white mx-2"
+          >
+            <i class="fa-solid fa-envelope fa-lg"></i>
+          </a>
+          <a
+            href="https://github.com/bllackbull"
+            target="_blank"
+            class="text-white mx-2"
+          >
+            <i class="fab fa-github fa-lg"></i>
+          </a>
+          <a
+            href="https://x.com/BlllackBull"
+            target="_blank"
+            class="text-white mx-2"
+          >
+            <i class="fab fa-x-twitter fa-lg"></i>
+          </a>
+        </div>
+        <p class="mb-2">&copy; 2025 Pouya Khalili. All rights reserved.</p>
+        <button id="backToTop" class="btn btn-outline-light">
+          <i class="fas fa-arrow-up"></i>
+        </button>
+      </div>
+    </footer>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="./script.js"></script>
+  </body>
+</html>
