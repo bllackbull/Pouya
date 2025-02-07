@@ -53,3 +53,16 @@ if ("serviceWorker" in navigator) {
       .catch((error) => console.log("Service Worker Failed:", error));
   });
 }
+
+// Install PWA
+let deferredPrompt;
+
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  document.getElementById("installPWA").style.display = "block";
+});
+
+document.getElementById("installPWA").addEventListener("click", () => {
+  deferredPrompt.prompt();
+});
