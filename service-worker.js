@@ -1,4 +1,4 @@
-const CACHE_NAME = "pwa-cache-v1";
+const CACHE_NAME = "pwa-cache-v1.3";
 const urlsToCache = [
   "/",
   "/index.html",
@@ -19,9 +19,23 @@ self.addEventListener("install", (event) => {
 
 // Fetch event: Serve cached assets when offline
 self.addEventListener("fetch", (event) => {
+  if (event.request.mode === "navigate") {
+    // Always fetch a fresh index.html
+    event.respondWith(fetch(event.request));
+    return;
+  }
+
   event.respondWith(
-    caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
+    caches.open(CACHE_NAME).then((cache) => {
+      return fetch(event.request)
+        .then((response) => {
+          // Only cache GET requests & successful responses
+          if (event.request.method === "GET" && response.status === 200) {
+            cache.put(event.request, response.clone());
+          }
+          return response;
+        })
+        .catch(() => caches.match(event.request)); // Serve from cache if offline
     })
   );
 });
@@ -29,14 +43,17 @@ self.addEventListener("fetch", (event) => {
 // Activate event: Clean old caches
 self.addEventListener("activate", (event) => {
   event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames.map((cache) => {
-          if (cache !== CACHE_NAME) {
-            return caches.delete(cache);
-          }
-        })
-      );
-    })
+    caches
+      .keys()
+      .then((cacheNames) => {
+        return Promise.all(
+          cacheNames.map((cache) => {
+            if (cache !== CACHE_NAME) {
+              return caches.delete(cache);
+            }
+          })
+        );
+      })
+      .then(() => self.clients.claim()) // Force clients to use new service worker
   );
 });
