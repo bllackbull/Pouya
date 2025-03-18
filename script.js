@@ -47,12 +47,18 @@ document.addEventListener("DOMContentLoaded", function () {
 // Register Service Worker
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("/service-worker.js").then((reg) => {
+    if (reg.waiting) {
+      // There's an update waiting, so reload the page
+      console.log("New update available! Reloading...");
+      window.location.reload();
+    }
+
     reg.onupdatefound = () => {
       const installingWorker = reg.installing;
       installingWorker.onstatechange = () => {
         if (installingWorker.state === "installed") {
           if (navigator.serviceWorker.controller) {
-            console.log("New update available! Refreshing...");
+            console.log("New update available! Reloading...");
             window.location.reload();
           }
         }
